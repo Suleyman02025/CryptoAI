@@ -1,0 +1,55 @@
+package com.example.cryptoai.ui.screens
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.cryptoai.ui.theme.PrimaryGreen
+import com.example.cryptoai.ui.theme.Urbanist
+
+@Composable
+fun SplashScreen() {
+    val scrollState = rememberScrollState()
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFF131316)),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(scrollState),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Row(verticalAlignment = Alignment.Bottom) {
+                Text(
+                    text = "CRYPTO",
+                    color = Color.White,
+                    fontFamily = Urbanist,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 36.sp,
+                    letterSpacing = 2.sp
+                )
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(
+                    text = "Ai",
+                    color = PrimaryGreen,
+                    fontFamily = Urbanist,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 44.sp,
+                    letterSpacing = 1.sp
+                )
+            }
+        }
+    }
+} 
